@@ -3,33 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran Clock Widget | Stay Connected</title>
+    <title>Quran Clock Widget - Android App</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; background: #f9f9f9; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; }
-        .screenshots { display: flex; justify-content: center; gap: 15px; margin: 30px 0; overflow-x: auto; }
-        .screenshots img { width: 200px; border-radius: 15px; border: 1px solid #ddd; }
-        .btn { display: inline-block; padding: 15px 40px; background: #01875f; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; transition: 0.3s; }
-        .btn:hover { background: #015e43; }
-        h1 { color: #01875f; margin-bottom: 10px; }
+        body { font-family: 'Roboto', Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; color: #3c4043; }
+        .header { background: white; padding: 24px; display: flex; align-items: center; border-bottom: 1px solid #dadce0; }
+        .logo { width: 80px; height: 80px; border-radius: 16px; margin-right: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .title-area h1 { margin: 0; font-size: 24px; color: #1f2024; }
+        .developer { color: #01875f; font-weight: bold; margin-top: 4px; font-size: 14px; }
+        
+        .main-container { max-width: 800px; margin: 20px auto; background: white; padding: 24px; border-radius: 8px; border: 1px solid #dadce0; }
+        
+        .screenshots { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 15px; margin: 20px 0; }
+        .screenshots img { height: 320px; border-radius: 12px; border: 1px solid #e0e0e0; }
+        
+        .btn { display: block; width: 100%; max-width: 250px; margin: 20px 0; padding: 14px; background: #01875f; color: white; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 16px; }
+        
+        .description h3 { border-bottom: 2px solid #01875f; display: inline-block; padding-bottom: 5px; }
+        .description ul { padding-left: 20px; }
+        .description li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="qc_logo.png" class="logo" alt="Logo">
-        <h1>Quran Clock Widget</h1>
-        <p>Enhance your home screen with beautiful Quranic verses and time.</p>
-        
-        <!-- Screenshots -->
+
+    <div class="header">
+        <img src="qc_logo.png" class="logo" alt="App Icon">
+        <div class="title-area">
+            <h1>Quran Clock Widget</h1>
+            <div class="developer">Riomen IT Solution Organization</div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- স্ক্রিনশট সেকশন -->
         <div class="screenshots">
             <img src="L_P.jpg" alt="Home Screen">
-            <img src="L_A.jpg" alt="App Preview">
-            <img src="L_S.jpg" alt="Settings">
+            <img src="L_A.jpg" alt="App Settings">
+            <img src="L_S.jpg" alt="Features">
         </div>
 
-        <a href="YOUR_APK_DOWNLOAD_LINK" class="btn">Download APK Now</a>
-        <p style="margin-top: 20px; font-size: 14px; color: #666;">Available for Android</p>
+        <a href="YOUR_DOWNLOAD_LINK_HERE" class="btn">Install</a>
+
+        <!-- ডেসক্রিপশন সেকশন -->
+        <div class="description">
+            <h3>About this app</h3>
+            <p>Quran Clock provides beautiful widgets with Quranic verses and time. Stay connected with the words of Allah throughout your day.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+                <li>Beautiful and customizable Quranic widgets for your home screen.</li>
+                <li>Displays meaningful Quranic verses with translations.</li>
+                <li>Seamless integration of time and spiritual reminders.</li>
+                <li>Optimized for low battery consumption.</li>
+                <li>Supports regular automatic updates for fresh content.</li>
+            </ul>
+        </div>
     </div>
+
 </body>
 </html>
