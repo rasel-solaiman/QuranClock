@@ -7,77 +7,45 @@
     <style>
         body { font-family: 'Roboto', Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; color: #3c4043; }
         .header { background: white; padding: 24px; display: flex; align-items: center; border-bottom: 1px solid #dadce0; }
-        .logo { width: 80px; height: 80px; border-radius: 16px; margin-right: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .title-area h1 { margin: 0; font-size: 24px; color: #1f2024; }
-        .developer { color: #01875f; font-weight: bold; margin-top: 4px; font-size: 14px; }
+        .logo { width: 80px; height: 80px; border-radius: 16px; margin-right: 20px; }
+        .btn { display: block; width: 100%; max-width: 250px; margin: 20px 0; padding: 14px; background: #01875f; color: white; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; }
         
-        .main-container { max-width: 800px; margin: 20px auto; background: white; padding: 24px; border-radius: 8px; border: 1px solid #dadce0; }
+        /* Screenshot Modal */
+        .screenshots { display: flex; gap: 12px; overflow-x: auto; padding: 20px 0; }
+        .screenshots img { height: 320px; border-radius: 12px; cursor: pointer; transition: 0.3s; }
         
-        .screenshots { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 15px; margin: 20px 0; }
-        .screenshots img { height: 320px; border-radius: 12px; border: 1px solid #e0e0e0; }
-        
-        .btn { display: block; width: 100%; max-width: 250px; margin: 20px 0; padding: 14px; background: #01875f; color: white; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 16px; }
-        
-        .description h3 { border-bottom: 2px solid #01875f; display: inline-block; padding-bottom: 5px; }
-        .description ul { padding-left: 20px; }
-        .description li { margin-bottom: 10px; }
+        #modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+        #modal img { display: block; margin: auto; max-height: 90%; margin-top: 5%; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="qc_logo.png" class="logo" alt="App Icon">
-        <div class="title-area">
-            <h1>Quran Clock Widget</h1>
-            <div class="developer">Riomen IT Solution Organization</div>
-        </div>
+        <img src="qc_logo.png" class="logo">
+        <h1>Quran Clock Widget</h1>
     </div>
 
-    <div class="main-container">
+    <div class="main-container" style="max-width: 800px; margin: auto; padding: 20px;">
+        <!-- ডাউনলোড বাটন ফিক্স -->
+        <a href="https://github.com/rasel-solaiman/QuranClock/releases/download/Quran/Quran.clock.apk" class="btn" download>Install</a>
 
-        <a href="https://github.com/rasel-solaiman/QuranClock/releases/download/Quran/Quran.clock.apk" class="btn">Install</a>
-        <!-- স্ক্রিনশট সেকশন -->
         <div class="screenshots">
-            <img src="L_P.jpg" alt="Home Screen">
-            <img src="L_A.jpg" alt="App Settings">
-            <img src="L_S.jpg" alt="Features">
-            <img src="L_T.jpg" alt="App Settings">
-            <img src="L_B.jpg" alt="Features">
-            <img src="D_S.jpg" alt="Features">
-            <img src="D_P.jpg" alt="Home Screen">
-            <img src="D_A.jpg" alt="App Settings">
-            <img src="D_B.jpg" alt="Home Screen">
-            <img src="D_T.jpg" alt="App Settings">
-        </div>
-
-        
-
-        <!-- ডেসক্রিপশন সেকশন -->
-        <div class="description">
-            <h3>About this app</h3>
-            <p>Quran Clock Widget is a beautiful and functional application designed to display Quranic verses and the current time directly on your phone's home screen. The core mission of this app is to help you stay connected with the words of Allah throughout your day.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li>Beautiful Widgets: Aesthetic and user-friendly Quran widgets for your home screen.</li>
-                <li>Quranic Verses: Each widget beautifully displays Quranic verses along with their translations.</li>
-                <li>Time & Verse Integration: Seamlessly combines the current time with meaningful verses.</li>
-                <li>Easy Customization: Options to toggle between 24-hour time format and display or hide the Arabic verse.</li>
-                <li>Auto-Update: Supports automatic widget updates at set intervals.</li>
-            </ul>
-
-
-
-              <h3>How to use:</h3>
-            <ol>
-                <li>Long-press on your home screen to add the widget manually.</li>
-                <li>Select 'Widgets' and locate 'Quran Clock'.</li>
-                <li>Drag and drop the widget onto your home screen.</li>
-                <li>For optimal performance and regular updates, disable battery optimization for this app in your phone settings.</li>
-                <li>You can resize the widget to allow for automatic text scaling.</li>
-            </ol>
+            <img src="L_P.jpg" onclick="openModal(this.src)">
+            <img src="L_A.jpg" onclick="openModal(this.src)">
+            <!-- অন্য সব ছবি এখানে এভাবে থাকবে -->
         </div>
     </div>
 
+    <!-- মোডাল স্ট্রাকচার -->
+    <div id="modal" onclick="this.style.display='none'">
+        <img id="modalImg">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('modalImg').src = src;
+        }
+    </script>
 </body>
 </html>
